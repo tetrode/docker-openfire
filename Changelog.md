@@ -1,5 +1,10 @@
 # Changelog
 
+**4.1.1**
+- openfire: upgrade to 4.1.1
+- java: use Oracle Java 8
+- Publish more useful ports
+
 **3.10.3**
 - openfire: upgrade to 3.10.3
 
