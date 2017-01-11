@@ -1,8 +1,12 @@
-Openfire:
-  image: sameersbn/openfire:3.10.3-17
-  ports:
-    - "9090:9090"
-    - "5222:5222"
-    - "7777:7777"
-  volumes:
-    - /srv/docker/openfire/openfire:/var/lib/openfire
+version: '2'
+services:
+  openfire:
+    image: gizmotronic/openfire:4.1.1
+    ports:
+      - "9090:9090/tcp"
+      - "9091:9091/tcp"
+      - "5222:5222/tcp"
+      - "7777:7777/tcp"
+    volumes:
+      - /srv/docker/openfire/data:/var/lib/openfire
+      - /srv/docker/openfire/logs:/var/log/openfire
