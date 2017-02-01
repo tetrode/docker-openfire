@@ -83,6 +83,17 @@ mkdir -p /srv/docker/openfire
 chcon -Rt svirt_sandbox_file_t /srv/docker/openfire
 ```
 
+## Java VM options
+
+You may append options to the startup command to configure the JVM:
+
+```bash
+docker run -name openfire -d \
+  [DOCKER_OPTIONS] \
+  gizmotronic/openfire:4.1.1 \
+  -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode
+```
+
 ## Logs
 
 To access the Openfire logs, located at `/var/log/openfire`, you can use `docker exec`. For example, if you want to tail the logs:
