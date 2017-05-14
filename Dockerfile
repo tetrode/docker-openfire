@@ -1,7 +1,7 @@
-FROM gizmotronic/oracle-java8
+FROM gizmotronic/oracle-java8:8u131
 MAINTAINER gizmotronic@gmail.com
 
-ENV OPENFIRE_VERSION=4.1.3 \
+ENV OPENFIRE_VERSION=4.1.4 \
     OPENFIRE_USER=openfire \
     OPENFIRE_DATA_DIR=/var/lib/openfire \
     OPENFIRE_LOG_DIR=/var/log/openfire
