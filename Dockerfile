@@ -1,4 +1,4 @@
-FROM gizmotronic/oracle-java8:8u131
+FROM gizmotronic/oracle-java8:8u144
 MAINTAINER gizmotronic@gmail.com
 
 ENV OPENFIRE_VERSION=4.1.5 \
