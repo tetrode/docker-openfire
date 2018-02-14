@@ -27,9 +27,13 @@ If you find this image useful here's how you can help:
 - Help users resolve their [issues](../../issues?q=is%3Aopen+is%3Aissue).
 - Support the development of this image with a [donation](http://www.damagehead.com/donate/)
 
-## Issues
+## Known issue
 
-Before reporting your issue please try updating Docker to the latest version and check if it resolves the issue. Refer to the Docker [installation guide](https://docs.docker.com/installation) for instructions.
+- When upgrading to 4.2.x you may need to [add some missing server properties](https://discourse.igniterealtime.org/t/keystore-problem-cannot-convert-combined-of-type-class-java-lang-string-to-class-org-jivesoftware-openfire-spi-connectiontype) to resolve a problem with managing TLS/SSL certificates.
+
+## Other issues
+
+Before reporting a bug please try updating Docker to the latest version and check if it resolves the issue. Refer to the Docker [installation guide](https://docs.docker.com/installation) for instructions.
 
 SELinux users should try disabling SELinux using the command `setenforce 0` to see if it resolves the issue.
 
