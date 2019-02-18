@@ -1,5 +1,8 @@
 # Changelog
 
+**4.3.2**
+- openfire: upgrade to 4.3.2
+
 **4.2.3**
 - openfire: upgrade to 4.2.3
 
