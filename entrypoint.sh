@@ -2,10 +2,9 @@
 set -e
 
 rewire_openfire() {
-  rm -rf /usr/share/openfire/{conf,resources/security,lib/log4j.xml}
+  rm -rf /usr/share/openfire/{conf,resources/security,lib/log4j2.xml}
   ln -sf ${OPENFIRE_DATA_DIR}/conf /usr/share/openfire/
   ln -sf ${OPENFIRE_DATA_DIR}/conf/security /usr/share/openfire/resources/
-  ln -sf ${OPENFIRE_DATA_DIR}/conf/log4j.xml /usr/share/openfire/lib/
 }
 
 initialize_data_dir() {
@@ -65,6 +64,7 @@ initialize_log_dir
 if [[ -z ${1} ]]; then
   exec start-stop-daemon --start --chuid ${OPENFIRE_USER}:${OPENFIRE_USER} --exec /usr/bin/java -- \
     -server \
+    -Dlog4j.configurationFile=${OPENFIRE_DATA_DIR}/conf/log4j2.xml \
     -DopenfireHome=/usr/share/openfire \
     -Dopenfire.lib.dir=/usr/share/openfire/lib \
     -classpath /usr/share/openfire/lib/startup.jar \
