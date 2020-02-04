@@ -51,14 +51,17 @@ WITH_ARCANIST=$?
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 echo "$NEW_VERSION" > VERSION
-$SED -i "s/$OLD_VERSION/$NEW_VERSION/g" Dockerfile
+
+for f in Dockerfile README.md docker-compose.yml; do
+    $SED -i "s/$OLD_VERSION/$NEW_VERSION/g" $f
+done
 
 #   -------------------------------------------------------------
 #   Prepare change for review
 #   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 git checkout -b "upgrade/$NEW_VERSION"
-git commit VERSION Dockerfile \
+git commit VERSION Dockerfile README.md docker-compose.yml \
   -m "Upgrade to Openfire $NEW_VERSION" -m "" \
   -m "Reference: http://download.igniterealtime.org/openfire/docs/latest/changelog.html"
 
