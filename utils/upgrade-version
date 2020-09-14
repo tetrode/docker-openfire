@@ -63,7 +63,7 @@ done
 git checkout -b "upgrade/$NEW_VERSION"
 git commit VERSION Dockerfile README.md docker-compose.yml \
   -m "Upgrade to Openfire $NEW_VERSION" -m "" \
-  -m "Reference: http://download.igniterealtime.org/openfire/docs/latest/changelog.html"
+  -m "Reference: https://download.igniterealtime.org/openfire/docs/latest/changelog.html"
 
 if [ $WITH_ARCANIST ]; then
     arc diff "HEAD^"
