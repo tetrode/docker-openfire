@@ -1,6 +1,6 @@
 FROM openjdk:8u242-jre-slim
 
-ENV OPENFIRE_VERSION=4.5.3 \
+ENV OPENFIRE_VERSION=4.5.4 \
     OPENFIRE_USER=openfire \
     OPENFIRE_DATA_DIR=/var/lib/openfire \
     OPENFIRE_LOG_DIR=/var/log/openfire
