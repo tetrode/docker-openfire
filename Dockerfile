@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:17-jdk-slim-bullseye
 
 ENV OPENFIRE_VERSION=4.6.4 \
     OPENFIRE_USER=openfire \
@@ -11,7 +11,7 @@ RUN apt-get update \
  && wget --no-verbose "http://download.igniterealtime.org/openfire/openfire_${OPENFIRE_VERSION}_all.deb" -O /tmp/openfire_${OPENFIRE_VERSION}_all.deb \
  && dpkg -i --force-depends /tmp/openfire_${OPENFIRE_VERSION}_all.deb \
  && mv /var/lib/openfire/plugins/admin /usr/share/openfire/plugin-admin \
- && ln -s /usr/local/openjdk-11/bin/java /usr/bin/java \
+ && ln -s /usr/local/openjdk-17/bin/java /usr/bin/java \
  && rm -rf openfire_${OPENFIRE_VERSION}_all.deb \
  && rm -rf /var/lib/apt/lists/*
 
