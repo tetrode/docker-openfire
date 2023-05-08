@@ -12,7 +12,7 @@ RUN apt-get update \
  && dpkg -i --force-depends /tmp/openfire_${OPENFIRE_VERSION}_all.deb \
  && mv /var/lib/openfire/plugins/admin /usr/share/openfire/plugin-admin \
  && ln -s /usr/local/openjdk-17/bin/java /usr/bin/java \
- && rm -rf openfire_${OPENFIRE_VERSION}_all.deb \
+ && rm -rf /tmp/openfire_${OPENFIRE_VERSION}_all.deb \
  && rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /sbin/entrypoint.sh
