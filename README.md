@@ -1,4 +1,4 @@
-# nasqueron/openfire:4.7.4
+# tetrode/openfire
 
 - [Introduction](#introduction)
   - [Contributing](#contributing)
@@ -13,13 +13,9 @@
 
 # Introduction
 
-This image is a fork of gizmotronic/openfire to keep an up-to-date version.
-
-`Dockerfile` to create a [Docker](https://www.docker.com/) container image for [Openfire](http://www.igniterealtime.org/projects/openfire/).
+This image is a fork of nasqueron/openfire to be able to build images of any version of [Openfire](http://www.igniterealtime.org/projects/openfire/).
 
 Openfire is a real time collaboration (RTC) server licensed under the Open Source Apache License. It uses the only widely adopted open protocol for instant messaging, XMPP (also called Jabber). Openfire is incredibly easy to setup and administer, but offers rock-solid security and performance.
-
-This project is almost entirely identical to [sameersbn/openfire](/sameersbn/openfire).
 
 ## Contributing
 
@@ -27,7 +23,6 @@ If you find this image useful here's how you can help:
 
 - Send a pull request with your awesome features and bug fixes
 - Help users resolve their [issues](../../issues?q=is%3Aopen+is%3Aissue).
-- Support the development of this image with a [donation](http://www.damagehead.com/donate/)
 
 ## Other issues
 
@@ -45,16 +40,16 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 
-Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/nasqueron/openfire) and is the recommended method of installation.
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/tetrode/openfire) and is the recommended method of installation.
 
 ```bash
-docker pull nasqueron/openfire:4.7.4
+docker pull tetrode/openfire:4.7.5
 ```
 
 Alternatively you can build the image yourself.
 
 ```bash
-docker build -t nasqueron/openfire github.com/nasqueron/docker-openfire
+docker build -t tetrode/openfire github.com/tetrode/docker-openfire
 ```
 
 ## Quickstart
@@ -64,8 +59,8 @@ Start Openfire using:
 ```bash
 docker run --name openfire -d --restart=always \
   --publish 9090:9090 --publish 5222:5222 --publish 7777:7777 \
-  --volume /srv/docker/openfire:/var/lib/openfire \
-  nasqueron/openfire:4.7.4
+  --volume ./config/openfire:/var/lib/openfire \
+  tetrode/openfire:4.7.5
 ```
 
 *Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
@@ -92,7 +87,7 @@ You may append options to the startup command to configure the JVM:
 ```bash
 docker run -name openfire -d \
   [DOCKER_OPTIONS] \
-  nasqueron/openfire:4.7.4 \
+  tetrode/openfire:4.7.5 \
   -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode
 ```
 
@@ -113,7 +108,7 @@ To upgrade to newer releases:
   1. Download the updated Docker image:
 
   ```bash
-  docker pull nasqueron/openfire:4.7.4
+  docker pull tetrode/openfire:4.7.5
   ```
 
   2. Stop the currently running image:
@@ -133,7 +128,7 @@ To upgrade to newer releases:
   ```bash
   docker run -name openfire -d \
     [OPTIONS] \
-    nasqueron/openfire:4.7.4
+    tetrode/openfire:4.7.5
   ```
 
 ## Shell Access
