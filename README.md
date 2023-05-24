@@ -1,21 +1,23 @@
 # tetrode/openfire
 
 - [Introduction](#introduction)
-  - [Contributing](#contributing)
-  - [Issues](#issues)
-  - [Announcements](../../issues/1)
+    - [Contributing](#contributing)
+    - [Issues](#issues)
 - [Getting started](#getting-started)
-  - [Installation](#installation)
-  - [Quickstart](#quickstart)
-  - [Persistence](#persistence)
-  - [Logs](#logs)
+    - [Installation](#installation)
+    - [Quickstart](#quickstart)
+    - [Persistence](#persistence)
+    - [Logs](#logs)
 - [References](#references)
 
 # Introduction
 
-This image is a fork of nasqueron/openfire to be able to build images of any version of [Openfire](http://www.igniterealtime.org/projects/openfire/).
+This image is a fork of nasqueron/openfire to be able to build images of any version
+of [Openfire](http://www.igniterealtime.org/projects/openfire/).
 
-Openfire is a real time collaboration (RTC) server licensed under the Open Source Apache License. It uses the only widely adopted open protocol for instant messaging, XMPP (also called Jabber). Openfire is incredibly easy to setup and administer, but offers rock-solid security and performance.
+Openfire is a real time collaboration (RTC) server licensed under the Open Source Apache License. It uses the only
+widely adopted open protocol for instant messaging, XMPP (also called Jabber). Openfire is incredibly easy to set up and
+administer, but offers rock-solid security and performance.
 
 ## Contributing
 
@@ -24,13 +26,15 @@ If you find this image useful here's how you can help:
 - Send a pull request with your awesome features and bug fixes
 - Help users resolve their [issues](../../issues?q=is%3Aopen+is%3Aissue).
 
-## Other issues
+## Issues
 
-Before reporting a bug please try updating Docker to the latest version and check if it resolves the issue. Refer to the Docker [installation guide](https://docs.docker.com/installation) for instructions.
+Before reporting a bug please try updating Docker to the latest version and check if it resolves the issue. Refer to the
+Docker [installation guide](https://docs.docker.com/installation) for instructions.
 
 SELinux users should try disabling SELinux using the command `setenforce 0` to see if it resolves the issue.
 
-If the above recommendations do not help then [report your issue](../../issues/new) along with the following information:
+If the above recommendations do not help then [report your issue](../../issues/new) along with the following
+information:
 
 - Output of the `docker version` and `docker info` commands
 - The `docker run` command or `docker-compose.yml` used to start the image. Mask out the sensitive bits.
@@ -40,7 +44,8 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 
-Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/tetrode/openfire) and is the recommended method of installation.
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/tetrode/openfire) and is the
+recommended method of installation.
 
 ```bash
 docker pull tetrode/openfire:4.7.5
@@ -63,13 +68,18 @@ docker run --name openfire -d --restart=always \
   tetrode/openfire:4.7.5
 ```
 
-*Alternatively, you can use the sample [docker-compose.yml](https://github.com/tetrode/docker-openfire/blob/main/docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
+*Alternatively, you can use the
+sample [docker-compose.yml](https://github.com/tetrode/docker-openfire/blob/main/docker-compose.yml) file to start the
+container using [Docker Compose](https://docs.docker.com/compose/)*
 
-Point your browser to http://localhost:9090 and follow the setup procedure to complete the installation. The [Build A Free Jabber Server In 10 Minutes](https://www.youtube.com/watch?v=ytUB5qJm5HE#t=246s) video by HAKK5 should help you with the configuration and also introduce you to some of its features.
+Point your browser to http://localhost:9090 and follow the setup procedure to complete the installation.
+The [Build A Free Jabber Server In 10 Minutes](https://www.youtube.com/watch?v=ytUB5qJm5HE#t=246s) video by HAKK5 should
+help you with the configuration and also introduce you to some of its features.
 
 ## Persistence
 
-For the Openfire to preserve its state across container shutdown and startup you should mount a volume at `/var/lib/openfire`.
+For the Openfire to preserve its state across container shutdown and startup you should mount a volume
+at `/var/lib/openfire`.
 
 > *The [Quickstart](#quickstart) command already mounts a volume for persistence.*
 
@@ -93,7 +103,8 @@ docker run -name openfire -d \
 
 ## Logs
 
-To access the Openfire logs, located at `/var/log/openfire`, you can use `docker exec`. For example, if you want to tail the logs:
+To access the Openfire logs, located at `/var/log/openfire`, you can use `docker exec`. For example, if you want to tail
+the logs:
 
 ```bash
 docker exec -it openfire tail -f /var/log/openfire/info.log
@@ -105,25 +116,25 @@ docker exec -it openfire tail -f /var/log/openfire/info.log
 
 To upgrade to newer releases:
 
-  1. Download the updated Docker image:
+1. Download the updated Docker image:
 
   ```bash
   docker pull tetrode/openfire:4.7.5
   ```
 
-  2. Stop the currently running image:
+2. Stop the currently running image:
 
   ```bash
   docker stop openfire
   ```
 
-  3. Remove the stopped container
+3. Remove the stopped container
 
   ```bash
   docker rm -v openfire
   ```
 
-  4. Start the updated image
+4. Start the updated image
 
   ```bash
   docker run -name openfire -d \
@@ -133,7 +144,8 @@ To upgrade to newer releases:
 
 ## Shell Access
 
-For debugging and maintenance purposes you may want access the containers shell. If you are using Docker version `1.3.0` or higher you can access a running containers shell by starting `bash` using `docker exec`:
+For debugging and maintenance purposes you may want access the containers shell. If you are using Docker version `1.3.0`
+or higher you can access a running containers shell by starting `bash` using `docker exec`:
 
 ```bash
 docker exec -it openfire bash
@@ -141,4 +153,4 @@ docker exec -it openfire bash
 
 # References
 
-  * http://www.igniterealtime.org/projects/openfire/
+* http://www.igniterealtime.org/projects/openfire/
