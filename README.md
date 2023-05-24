@@ -63,7 +63,7 @@ docker run --name openfire -d --restart=always \
   tetrode/openfire:4.7.5
 ```
 
-*Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
+*Alternatively, you can use the sample [docker-compose.yml](https://github.com/tetrode/docker-openfire/blob/main/docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
 
 Point your browser to http://localhost:9090 and follow the setup procedure to complete the installation. The [Build A Free Jabber Server In 10 Minutes](https://www.youtube.com/watch?v=ytUB5qJm5HE#t=246s) video by HAKK5 should help you with the configuration and also introduce you to some of its features.
 
@@ -142,4 +142,3 @@ docker exec -it openfire bash
 # References
 
   * http://www.igniterealtime.org/projects/openfire/
-  * https://library.linode.com/communications/xmpp/openfire/ubuntu-12.04-precise-pangolin
