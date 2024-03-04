@@ -48,7 +48,7 @@ Automated builds of the image are available on [Dockerhub](https://hub.docker.co
 recommended method of installation.
 
 ```bash
-docker pull tetrode/openfire:4.8.0
+docker pull tetrode/openfire:4.8.1
 ```
 
 Alternatively you can build the image yourself.
@@ -65,7 +65,7 @@ Start Openfire using:
 docker run --name openfire -d --restart=always \
   --publish 9090:9090 --publish 5222:5222 --publish 7777:7777 \
   --volume ./config/openfire:/var/lib/openfire \
-  tetrode/openfire:4.8.0
+  tetrode/openfire:4.8.1
 ```
 
 *Alternatively, you can use the
@@ -97,7 +97,7 @@ You may append options to the startup command to configure the JVM:
 ```bash
 docker run -name openfire -d \
   [DOCKER_OPTIONS] \
-  tetrode/openfire:4.8.0 \
+  tetrode/openfire:4.8.1 \
   -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode
 ```
 
@@ -119,7 +119,7 @@ To upgrade to newer releases:
 1. Download the updated Docker image:
 
   ```bash
-  docker pull tetrode/openfire:4.8.0
+  docker pull tetrode/openfire:4.8.1
   ```
 
 2. Stop the currently running image:
@@ -139,7 +139,7 @@ To upgrade to newer releases:
   ```bash
   docker run -name openfire -d \
     [OPTIONS] \
-    tetrode/openfire:4.8.0
+    tetrode/openfire:4.8.1
   ```
 
 ## Shell Access

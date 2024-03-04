@@ -1,5 +1,5 @@
 FROM openjdk:17-jdk-slim-bullseye
-ARG OPENFIRE_VERSION=4.8.0
+ARG OPENFIRE_VERSION=4.8.1
 ENV OPENFIRE_VERSION=${OPENFIRE_VERSION} \
     OPENFIRE_USER=openfire \
     OPENFIRE_DATA_DIR=/var/lib/openfire \
