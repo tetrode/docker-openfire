@@ -1,4 +1,3 @@
-version: '2'
 services:
   openfire:
     image: openfire:${OPENFIRE_VERSION}
