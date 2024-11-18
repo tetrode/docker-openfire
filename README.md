@@ -154,3 +154,16 @@ docker exec -it openfire bash
 # References
 
 * http://www.igniterealtime.org/projects/openfire/
+
+
+### Update to a next version
+
+example how to update from 4.9.1 to 4.9.2
+
+```bash
+sed  -i '' 's/4.9.1/4.9.2/g' VERSION Makefile Dockerfile README.md
+git add VERSION Makefile Dockerfile README.md
+git commit -m 'upgrade version to 4.9.2'
+git push
+```
+
