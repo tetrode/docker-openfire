@@ -1,4 +1,4 @@
-version=4.9.2
+version=5.0.1
 
 all: build
 
@@ -20,5 +20,5 @@ push: release
 help:
 	@echo "Targets:            build, release, run"
 	@echo "Optional parameter: version=x.y.z"
-	@echo "Example:            make release version=4.9.2"
+	@echo "Example:            make release version=5.0.1"
 	@echo "For Openfire version information see https://github.com/igniterealtime/Openfire/releases"
